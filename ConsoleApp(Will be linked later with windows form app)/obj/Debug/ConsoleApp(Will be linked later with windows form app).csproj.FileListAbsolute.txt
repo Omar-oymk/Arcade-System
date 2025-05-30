@@ -1,0 +1,7 @@
+C:\Users\user\Arcade-System\ConsoleApp(Will be linked later with windows form app)\bin\Debug\ConsoleApp(Will be linked later with windows form app).exe.config
+C:\Users\user\Arcade-System\ConsoleApp(Will be linked later with windows form app)\bin\Debug\ConsoleApp(Will be linked later with windows form app).exe
+C:\Users\user\Arcade-System\ConsoleApp(Will be linked later with windows form app)\bin\Debug\ConsoleApp(Will be linked later with windows form app).pdb
+C:\Users\user\Arcade-System\ConsoleApp(Will be linked later with windows form app)\obj\Debug\ConsoleApp(Will be linked later with windows form app).csproj.AssemblyReference.cache
+C:\Users\user\Arcade-System\ConsoleApp(Will be linked later with windows form app)\obj\Debug\ConsoleApp(Will be linked later with windows form app).csproj.CoreCompileInputs.cache
+C:\Users\user\Arcade-System\ConsoleApp(Will be linked later with windows form app)\obj\Debug\ConsoleApp(Will be linked later with windows form app).exe
+C:\Users\user\Arcade-System\ConsoleApp(Will be linked later with windows form app)\obj\Debug\ConsoleApp(Will be linked later with windows form app).pdb
