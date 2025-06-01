@@ -80,12 +80,7 @@
             this.buttonRegister.Size = new System.Drawing.Size(159, 38);
             this.buttonRegister.TabIndex = 10;
             this.buttonRegister.Text = "Register";
-<<<<<<< HEAD:Projectt/Projectt/Register.Designer.cs
             this.buttonRegister.UseVisualStyleBackColor = false;
-=======
-            this.buttonRegister.UseVisualStyleBackColor = true;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
->>>>>>> Hana:Projectt/Projectt/Form1.Designer.cs
             // 
             // Pswrd_text
             // 

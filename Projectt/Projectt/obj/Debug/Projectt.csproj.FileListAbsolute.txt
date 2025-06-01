@@ -19,7 +19,6 @@ C:\Users\user\Downloads\projectzipped\Projectt\Projectt\obj\Debug\Projectt.Form1
 C:\Users\user\Downloads\projectzipped\Projectt\Projectt\obj\Debug\Projectt.Properties.Resources.resources
 C:\Users\user\Downloads\projectzipped\Projectt\Projectt\obj\Debug\Projectt.csproj.GenerateResource.cache
 C:\Users\user\Downloads\projectzipped\Projectt\Projectt\obj\Debug\Projectt.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\bin\Debug\Projectt.exe.config
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\bin\Debug\Projectt.exe
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\bin\Debug\Projectt.pdb
@@ -35,15 +34,3 @@ C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\P
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.Ticket.resources
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.MainPage.resources
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.FlappyDemon.resources
-=======
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\bin\Debug\Projectt.exe.config
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\bin\Debug\Projectt.exe
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\bin\Debug\Projectt.pdb
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.csproj.AssemblyReference.cache
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.Form1.resources
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.Properties.Resources.resources
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.csproj.GenerateResource.cache
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.csproj.CoreCompileInputs.cache
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.exe
-C:\Users\hanae\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.pdb
->>>>>>> Hana
