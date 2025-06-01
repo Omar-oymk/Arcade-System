@@ -41,17 +41,17 @@ namespace Projectt
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(42, 12);
+            this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 704);
+            this.panel1.Size = new System.Drawing.Size(600, 704);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(1127, 0);
+            this.panel2.Location = new System.Drawing.Point(598, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(0, 708);
+            this.panel2.Size = new System.Drawing.Size(629, 708);
             this.panel2.TabIndex = 1;
             // 
             // timer1
@@ -76,12 +76,11 @@ namespace Projectt
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(8)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1153, 693);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Name = "FlappyDemon";
             this.Text = "FlappyDemon";
-            this.Load += new System.EventHandler(this.FlappyDemon_Load);
             this.ResumeLayout(false);
 
         }
