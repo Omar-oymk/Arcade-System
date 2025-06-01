@@ -95,5 +95,12 @@ namespace Projectt
             FlappyDemon game = new FlappyDemon();
             game.ShowDialog();
         }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

@@ -17,8 +17,10 @@ namespace Projectt
         {
             InitializeComponent();
             this.BackColor = ColorTranslator.FromHtml("#6c329d");
-            //label3.ForeColor = ColorTranslator.FromHtml("#422991");
-            //label4.ForeColor = ColorTranslator.FromHtml("#422991");
+
+
+            Pswrd_text.PasswordChar = '*';
+            Pswrd_text.Font = new Font("ArcadeClassic", 14, FontStyle.Bold);
         }
 
         private void Form1_Load(object sender, EventArgs e) { }
@@ -37,5 +39,50 @@ namespace Projectt
         {
 
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string email = txt_Email.Text;
+                int password;
+                if (!int.TryParse(Pswrd_text.Text, out password))
+                {
+                    MessageBox.Show("Invalid password format! Please enter a number.");
+                    return;
+                }
+                string query = "INSERT INTO dbo.Arcade (Email, Password) VALUES (@Email, @Password)";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Password", password);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Registration successful!");
+                    Login login = new Login();
+                    login.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("No record was inserted.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+
+
     }
 }

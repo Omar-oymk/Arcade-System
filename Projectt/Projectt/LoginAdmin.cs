@@ -2,40 +2,31 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Projectt
 {
-    public partial class Login: Form
+    public partial class LoginAdmin : Form
     {
-        public Login()
+        public LoginAdmin()
         {
             InitializeComponent();
-            this.BackColor = ColorTranslator.FromHtml("#6c329d");
+
+
             Pswrd_text.PasswordChar = '*';
             Pswrd_text.Font = new Font("ArcadeClassic", 14, FontStyle.Bold);
-
         }
 
-        private void Form1_Load(object sender, EventArgs e) { }
 
         SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
         string email;
         int password;
-        private void buttonSignUp_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Register registerPage = new Register();
-            registerPage.FormClosed += (s, args) => this.Show();
-            registerPage.Show();
-        }
-
-        private void buttonLogin_Click(object sender, EventArgs e) 
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
             {
@@ -57,20 +48,20 @@ namespace Projectt
                 cmd.Parameters.AddWithValue("@Password", password); // Sending password as an integer
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                 DataTable dtablem = new DataTable();
-               sda.Fill(dtablem);
+                DataTable dtablem = new DataTable();
+                sda.Fill(dtablem);
 
                 if (dtablem.Rows.Count > 0)
                 {
                     MessageBox.Show("Login successful!");
-                    Ticket ticket1 = new Ticket();
-                    ticket1.Show();
+                    MainPage main = new MainPage();
+                    main.Show();
                     this.Hide();
                 }
                 else
-               {
-                 MessageBox.Show("Invalid email or password.");
-                   }
+                {
+                    MessageBox.Show("Invalid email or password.");
+                }
             }
             catch (Exception ex)
             {
@@ -81,46 +72,5 @@ namespace Projectt
                 conn.Close();
             }
         }
-        static void main(string[] args)
-        {
-           Application.Run(new Login());
-       
-
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            LoginAdmin login = new LoginAdmin();
-            login.Show();
-            this.Hide();
-        }
-
-        private void label2_MouseEnter(object sender, EventArgs e)
-        {
-            label2.ForeColor = Color.DarkTurquoise;
-        }
-
-        private void label2_MouseLeave(object sender, EventArgs e)
-        {
-            label2.ForeColor = Color.Black;
-        }
-
-        private void buttonSignUp_Click_1(object sender, EventArgs e)
-        {
-            Register register = new Register();
-            register.Show();
-            this.Hide();
-        }
-
-        private void Pswrd_text_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
     }
 }
-

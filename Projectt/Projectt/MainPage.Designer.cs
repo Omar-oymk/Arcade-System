@@ -103,6 +103,7 @@ namespace Projectt
             this.Logout.Size = new System.Drawing.Size(94, 23);
             this.Logout.TabIndex = 2;
             this.Logout.Text = "Logout";
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
             this.Logout.MouseEnter += new System.EventHandler(this.Logout_MouseEnter);
             this.Logout.MouseLeave += new System.EventHandler(this.Logout_MouseLeave);
             // 

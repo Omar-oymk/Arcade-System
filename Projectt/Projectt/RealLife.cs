@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projectt
 {
-    public partial class Spaceform: Form
+    public partial class RealLife : Form
     {
-        public Spaceform()
+        public RealLife()
         {
             InitializeComponent();
         }
