@@ -11,16 +11,17 @@ using System.Data.SqlClient;
 
 namespace Projectt
 {
-    public partial class Form1: Form
+    public partial class Login: Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#6c329d");
+            //label3.ForeColor = ColorTranslator.FromHtml("#422991");
+            //label4.ForeColor = ColorTranslator.FromHtml("#422991);
         }
 
         private void Form1_Load(object sender, EventArgs e) { }
-
-        private void textBox5_TextChanged(object sender, EventArgs e) { }
 
         SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
         string email;
@@ -70,11 +71,41 @@ namespace Projectt
         }
         static void main(string[] args)
         {
-           Application.Run(new Form1());
+           Application.Run(new Login());
        
 
         }
 
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Register registerPage = new Register();
+            registerPage.FormClosed += (s, args) => this.Show();
+            registerPage.Show();
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Ticket mainpage = new Ticket();
+            mainpage.Show();
+            this.Hide();
+        }
+
+        private void label2_MouseEnter(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.DarkTurquoise;
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.Black;
+        }
     }
 }
 
