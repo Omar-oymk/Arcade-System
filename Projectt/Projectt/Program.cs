@@ -16,7 +16,13 @@ namespace Projectt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new Login());
+=======
+            Application.Run(new Form1());
+            // blablablalblablablab
+            /// new blalblablab
+>>>>>>> Hana
         }
     }
 }
