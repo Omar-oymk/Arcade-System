@@ -23,8 +23,7 @@ namespace Projectt
         private void textBox5_TextChanged(object sender, EventArgs e) { }
 
         SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
-        string email;
-        int password;
+    
         private void buttonLogin_Click(object sender, EventArgs e) 
         {
             try
@@ -32,19 +31,19 @@ namespace Projectt
                 string email = txt_Email.Text;
                int password;
 
-                // Convert password input to an integer safely
+                
                 if (!int.TryParse(Pswrd_text.Text, out password))
                 {
                     MessageBox.Show("Invalid password format! Please enter a number.");
-                    return; // Stop execution if the password isn't a valid number
+                    return; 
                 }
 
-                // Correct SQL query with parameterized values
+                
                 string query = "SELECT * FROM dbo.Arcade WHERE Email = @Email AND Password = @Password";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Password", password); // Sending password as an integer
+                cmd.Parameters.AddWithValue("@Password", password); 
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                  DataTable dtablem = new DataTable();
@@ -75,6 +74,47 @@ namespace Projectt
 
         }
 
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string email = txt_Email.Text;
+                int password;
+                if (!int.TryParse(Pswrd_text.Text, out password))
+                {
+                    MessageBox.Show("Invalid password format! Please enter a number.");
+                    return;
+                }
+                string query = "INSERT INTO dbo.Arcade (Email, Password) VALUES (@Email, @Password)";
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Password", password);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Registration successful!");
+                }
+                else
+                {
+                    MessageBox.Show("No record was inserted.");
+                }
+            }
+           catch (Exception ex)
+           {
+                MessageBox.Show("Error: " + ex.Message);
+           }
+           finally
+           {
+                conn.Close();
+           }
+
+
+        }
+
+        
     }
 }
 
