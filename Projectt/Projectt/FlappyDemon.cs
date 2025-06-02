@@ -38,7 +38,7 @@ namespace Projectt
             panel3.Resize += panelGameHost_Resize;
 
             // Launch and embed the Unity game
-            string unityGamePath = @"C:\Users\user\Arcade-System\Base_Game\FlappyDemon.exe"; // Replace this
+            string unityGamePath = @"C:\Users\user\Downloads\Base_Game\FlappyDemon.exe"; // Replace this
             EmbedUnityGame(unityGamePath);
         }
 
@@ -101,6 +101,11 @@ namespace Projectt
                 panel2.Width = 0;
                 timer2.Stop();
             }
+        }
+
+        private void FlappyDemon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

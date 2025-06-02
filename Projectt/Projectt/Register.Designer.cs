@@ -81,6 +81,7 @@
             this.buttonRegister.TabIndex = 10;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // Pswrd_text
             // 
@@ -90,6 +91,7 @@
             this.Pswrd_text.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Pswrd_text.Location = new System.Drawing.Point(363, 340);
             this.Pswrd_text.Name = "Pswrd_text";
+            this.Pswrd_text.PasswordChar = '*';
             this.Pswrd_text.Size = new System.Drawing.Size(245, 28);
             this.Pswrd_text.TabIndex = 11;
             // 

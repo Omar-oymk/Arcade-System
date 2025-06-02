@@ -15,6 +15,7 @@ namespace Projectt
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
         private void MainPage_Load(object sender, EventArgs e)
@@ -60,11 +61,11 @@ namespace Projectt
         bool panelIsOpen = false;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int targetWidth = 300;
+            int targetWidth = 270;
 
             if(!panelIsOpen)
             {
-                SideBar.Width += 30;
+                SideBar.Width += 27;
 
                 if(SideBar.Width == targetWidth)
                 {
@@ -94,6 +95,13 @@ namespace Projectt
         {
             FlappyDemon game = new FlappyDemon();
             game.ShowDialog();
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

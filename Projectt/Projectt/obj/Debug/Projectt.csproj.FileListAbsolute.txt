@@ -34,3 +34,5 @@ C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\P
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.Ticket.resources
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.MainPage.resources
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.FlappyDemon.resources
+C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.LoginAdmin.resources
+C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.RealLife.resources

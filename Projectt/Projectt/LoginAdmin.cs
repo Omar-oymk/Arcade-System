@@ -12,72 +12,64 @@ using System.Windows.Forms;
 
 namespace Projectt
 {
-    public partial class Register : Form
+    public partial class LoginAdmin : Form
     {
         SoundPlayer buttonEffect;
-        public Register()
+        public LoginAdmin()
         {
             InitializeComponent();
-            this.BackColor = ColorTranslator.FromHtml("#6c329d");
 
 
             Pswrd_text.PasswordChar = '*';
             Pswrd_text.Font = new Font("ArcadeClassic", 14, FontStyle.Bold);
         }
 
-        private void Form1_Load(object sender, EventArgs e) { }
 
         SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
         string email;
         int password;
-        static void main(string[] args)
-        {
-            Application.Run(new Login());
-
-
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonRegister_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 string email = txt_Email.Text;
                 int password;
+
+                // Convert password input to an integer safely
                 if (!int.TryParse(Pswrd_text.Text, out password))
                 {
                     MessageBox.Show("Invalid password format! Please enter a number.");
-                    return;
+                    return; // Stop execution if the password isn't a valid number
                 }
-                string query = "INSERT INTO dbo.Arcade (Email, Password) VALUES (@Email, @Password)";
+
+                // Correct SQL query with parameterized values
+                string query = "SELECT * FROM dbo.Arcade WHERE Email = @Email AND Password = @Password";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@Password", password); // Sending password as an integer
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dtablem = new DataTable();
+                sda.Fill(dtablem);
 
-                if (rowsAffected > 0)
+                if (dtablem.Rows.Count > 0)
                 {
                     // for the sound effect
                     buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
                     buttonEffect.Play();
 
                     // messagebox for login
-                    MessageBox.Show("Registration successful!");
+                    MessageBox.Show("Login successful!");
 
                     // next page
-                    Login login = new Login();
-                    login.Show();
+                    MainPage main = new MainPage();
+                    main.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("No record was inserted.");
+                    MessageBox.Show("Invalid email or password.");
                 }
             }
             catch (Exception ex)
@@ -88,10 +80,6 @@ namespace Projectt
             {
                 conn.Close();
             }
-
-
         }
-
-
     }
 }

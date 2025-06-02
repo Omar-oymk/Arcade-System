@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Media;
 
 namespace Projectt
 {
     public partial class Login: Form
     {
+        SoundPlayer songPlayer;
+        SoundPlayer buttonEffect;
         public Login()
         {
             InitializeComponent();
             this.BackColor = ColorTranslator.FromHtml("#6c329d");
-            //label3.ForeColor = ColorTranslator.FromHtml("#422991");
-            //label4.ForeColor = ColorTranslator.FromHtml("#422991);
+            Pswrd_text.PasswordChar = '*';
+            Pswrd_text.Font = new Font("ArcadeClassic", 14, FontStyle.Bold);
+            songPlayer = new SoundPlayer(@"C:\Users\user\Downloads\ArcadeLoginSong.wav");
+            songPlayer.Play();
         }
 
         private void Form1_Load(object sender, EventArgs e) { }
@@ -26,12 +31,22 @@ namespace Projectt
         SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
         string email;
         int password;
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Register registerPage = new Register();
+            registerPage.FormClosed += (s, args) => this.Show();
+            registerPage.Show();
+        }
+
         private void buttonLogin_Click(object sender, EventArgs e) 
         {
+
+
             try
             {
                 string email = txt_Email.Text;
-               int password;
+                int password;
 
                 // Convert password input to an integer safely
                 if (!int.TryParse(Pswrd_text.Text, out password))
@@ -53,7 +68,17 @@ namespace Projectt
 
                 if (dtablem.Rows.Count > 0)
                 {
+                    // for the sound effect
+                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+                    buttonEffect.Play();
+
+                    // messagebox for login
                     MessageBox.Show("Login successful!");
+
+                    // next page
+                    Ticket ticket1 = new Ticket();
+                    ticket1.Show();
+                    this.Hide();
                 }
                 else
                {
@@ -81,19 +106,10 @@ namespace Projectt
 
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Register registerPage = new Register();
-            registerPage.FormClosed += (s, args) => this.Show();
-            registerPage.Show();
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
-            Ticket mainpage = new Ticket();
-            mainpage.Show();
+            LoginAdmin login = new LoginAdmin();
+            login.Show();
             this.Hide();
         }
 
@@ -105,6 +121,19 @@ namespace Projectt
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             label2.ForeColor = Color.Black;
+        }
+
+        private void buttonSignUp_Click_1(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Hide();
+        }
+
+        private void buttonLogin_MouseHover(object sender, EventArgs e)
+        {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+            buttonEffect.Play();
         }
     }
 }
