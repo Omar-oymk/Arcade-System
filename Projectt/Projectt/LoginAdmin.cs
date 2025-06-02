@@ -26,28 +26,23 @@ namespace Projectt
 
 
         SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
-        string email;
-        int password;
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                string email = txt_Email.Text;
-                int password;
 
-                // Convert password input to an integer safely
-                if (!int.TryParse(Pswrd_text.Text, out password))
-                {
-                    MessageBox.Show("Invalid password format! Please enter a number.");
-                    return; // Stop execution if the password isn't a valid number
-                }
+                string email = txt_Email.Text;
+                string password = Pswrd_text.Text;
+
+                // create new admin object
+                Admin admin = new Admin(email, password);
 
                 // Correct SQL query with parameterized values
-                string query = "SELECT * FROM dbo.Arcade WHERE Email = @Email AND Password = @Password";
+                string query = "SELECT * FROM dbo.Arcade WHERE Email = @Email AND Password = @Password AND IsAdmin = 1";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Password", password); // Sending password as an integer
+                cmd.Parameters.AddWithValue("@Password", password);
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dtablem = new DataTable();
@@ -63,13 +58,13 @@ namespace Projectt
                     MessageBox.Show("Login successful!");
 
                     // next page
-                    MainPage main = new MainPage();
+                    AdminPage main = new AdminPage();
                     main.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid email or password.");
+                    MessageBox.Show("Invalid email or password or Is not an admin");
                 }
             }
             catch (Exception ex)

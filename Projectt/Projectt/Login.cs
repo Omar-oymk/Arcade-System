@@ -16,6 +16,8 @@ namespace Projectt
     {
         SoundPlayer songPlayer;
         SoundPlayer buttonEffect;
+        SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
+        
         public Login()
         {
             InitializeComponent();
@@ -26,45 +28,27 @@ namespace Projectt
             songPlayer.Play();
         }
 
-        private void Form1_Load(object sender, EventArgs e) { }
-
-        SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
-        string email;
-        int password;
-        private void buttonSignUp_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Register registerPage = new Register();
-            registerPage.FormClosed += (s, args) => this.Show();
-            registerPage.Show();
-        }
-
+        #region Login Button
         private void buttonLogin_Click(object sender, EventArgs e) 
-        {
-
-
+        {   
             try
             {
                 string email = txt_Email.Text;
-                int password;
+                string password = Pswrd_text.Text;
 
-                // Convert password input to an integer safely
-                if (!int.TryParse(Pswrd_text.Text, out password))
-                {
-                    MessageBox.Show("Invalid password format! Please enter a number.");
-                    return; // Stop execution if the password isn't a valid number
-                }
+                // create new player object
+                Player player = new Player(email, password);
 
                 // Correct SQL query with parameterized values
                 string query = "SELECT * FROM dbo.Arcade WHERE Email = @Email AND Password = @Password";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Password", password); // Sending password as an integer
+                cmd.Parameters.AddWithValue("@Password", password);
 
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                 DataTable dtablem = new DataTable();
-               sda.Fill(dtablem);
+                DataTable dtablem = new DataTable();
+                sda.Fill(dtablem);
 
                 if (dtablem.Rows.Count > 0)
                 {
@@ -81,9 +65,9 @@ namespace Projectt
                     this.Hide();
                 }
                 else
-               {
+                {
                  MessageBox.Show("Invalid email or password.");
-                   }
+                }
             }
             catch (Exception ex)
             {
@@ -94,23 +78,26 @@ namespace Projectt
                 conn.Close();
             }
         }
-        static void main(string[] args)
+
+        #endregion
+
+        #region Register Button
+        private void buttonSignUp_Click(object sender, EventArgs e)
         {
-           Application.Run(new Login());
-       
-
+            this.Hide();
+            Register registerPage = new Register();
+            registerPage.Show();
+            registerPage.FormClosed += (s, args) => this.Show();
         }
+        #endregion
 
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
+        #region alreadyAndAdmin behaviour
         private void label2_Click(object sender, EventArgs e)
         {
             LoginAdmin login = new LoginAdmin();
             login.Show();
             this.Hide();
+            login.FormClosed += (s, args) => this.Show();
         }
 
         private void label2_MouseEnter(object sender, EventArgs e)
@@ -122,19 +109,14 @@ namespace Projectt
         {
             label2.ForeColor = Color.Black;
         }
+        #endregion
 
-        private void buttonSignUp_Click_1(object sender, EventArgs e)
+
+        static void main(string[] args)
         {
-            Register register = new Register();
-            register.Show();
-            this.Hide();
+           Application.Run(new Login());
         }
 
-        private void buttonLogin_MouseHover(object sender, EventArgs e)
-        {
-            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
-            buttonEffect.Play();
-        }
     }
 }
 

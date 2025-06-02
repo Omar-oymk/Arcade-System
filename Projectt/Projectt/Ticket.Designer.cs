@@ -34,7 +34,7 @@ namespace Projectt
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonLogin = new System.Windows.Forms.Button();
+            this.Next = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,17 +75,17 @@ namespace Projectt
             this.label1.TabIndex = 3;
             this.label1.Text = "Choose Your Ticket..";
             // 
-            // buttonLogin
+            // Next
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(102)))), ((int)(((byte)(174)))));
-            this.buttonLogin.Font = new System.Drawing.Font("ArcadeClassic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(618, 463);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(159, 38);
-            this.buttonLogin.TabIndex = 10;
-            this.buttonLogin.Text = "Next";
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.Next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(102)))), ((int)(((byte)(174)))));
+            this.Next.Font = new System.Drawing.Font("ArcadeClassic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Next.Location = new System.Drawing.Point(618, 463);
+            this.Next.Name = "Next";
+            this.Next.Size = new System.Drawing.Size(159, 38);
+            this.Next.TabIndex = 10;
+            this.Next.Text = "Next";
+            this.Next.UseVisualStyleBackColor = false;
+            this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // Ticket
             // 
@@ -93,7 +93,7 @@ namespace Projectt
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(789, 513);
-            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.Next);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
@@ -111,6 +111,6 @@ namespace Projectt
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Button Next;
     }
 }

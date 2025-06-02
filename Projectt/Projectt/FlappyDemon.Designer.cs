@@ -43,15 +43,15 @@ namespace Projectt
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(90, 704);
+            this.panel1.Size = new System.Drawing.Size(600, 704);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(1063, 0);
+            this.panel2.Location = new System.Drawing.Point(597, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(164, 708);
+            this.panel2.Size = new System.Drawing.Size(611, 708);
             this.panel2.TabIndex = 1;
             // 
             // timer1

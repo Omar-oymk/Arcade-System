@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projectt
 {
-    public partial class MainPage : Form
+    public partial class AdminPage : Form
     {
-        public MainPage()
+        public AdminPage()
         {
             InitializeComponent();
             
@@ -22,17 +22,6 @@ namespace Projectt
         {
 
         }
-
-        private void Profile_MouseEnter(object sender, EventArgs e)
-        {
-            Profile.ForeColor = Color.White;
-        }
-
-        private void Profile_MouseLeave(object sender, EventArgs e)
-        {
-            Profile.ForeColor = Color.Black;
-        }
-
         private void Games_MouseEnter(object sender, EventArgs e)
         {
             Games.ForeColor = Color.White;
@@ -105,6 +94,56 @@ namespace Projectt
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void SideBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.White;
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.Black;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_MouseEnter(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.White;
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.Black;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_MouseEnter(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.White;
+        }
+
+        private void label3_MouseLeave(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.Black;
         }
     }
 }

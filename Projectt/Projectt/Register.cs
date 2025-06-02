@@ -15,6 +15,8 @@ namespace Projectt
     public partial class Register : Form
     {
         SoundPlayer buttonEffect;
+        SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
+
         public Register()
         {
             InitializeComponent();
@@ -25,73 +27,136 @@ namespace Projectt
             Pswrd_text.Font = new Font("ArcadeClassic", 14, FontStyle.Bold);
         }
 
-        private void Form1_Load(object sender, EventArgs e) { }
-
-        SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
-        string email;
-        int password;
-        static void main(string[] args)
-        {
-            Application.Run(new Login());
-
-
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
+        #region Register Button
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            try
-            {
                 string email = txt_Email.Text;
-                int password;
-                if (!int.TryParse(Pswrd_text.Text, out password))
+                string password = Pswrd_text.Text;
+                
+                if(validEmail(email) && validPassword(password))
                 {
-                    MessageBox.Show("Invalid password format! Please enter a number.");
-                    return;
+                    try
+                    {
+                        Player player = new Player(email, password);        // create new player object
+                        string query = "INSERT INTO dbo.Arcade (Email, Password) VALUES (@Email, @Password)";
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Password", password);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            // for the sound effect
+                            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+                            buttonEffect.Play();
+
+                            // messagebox for login
+                            MessageBox.Show("Registration successful!");
+
+                            // next page
+                            Login login = new Login();
+                            login.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No record was inserted.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
                 }
-                string query = "INSERT INTO dbo.Arcade (Email, Password) VALUES (@Email, @Password)";
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Password", password);
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
-                {
-                    // for the sound effect
-                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
-                    buttonEffect.Play();
-
-                    // messagebox for login
-                    MessageBox.Show("Registration successful!");
-
-                    // next page
-                    Login login = new Login();
-                    login.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("No record was inserted.");
-                }
-            }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Enter a valid Email Or Password");
+                MessageBox.Show("Password must be of length 8\n1 Special character\n1 Number at least");
+                MessageBox.Show("Email must end with @gmail.com or @yahoo.com or @outlook.com");
             }
-            finally
+        }
+               
+        #endregion
+
+        #region Email And Password Restrictions Functions
+        private bool validEmail(string email)
+        {
+            String temp = "";
+            for (int i = 0; i < email.Length; i++)
             {
-                conn.Close();
+                if (email[i] == '@')
+                {
+                    for (int j = (i + 1); j < email.Length; j++)
+                    {
+                        temp += email[j];   // saved whatever is after the @
+                    }
+                    break;
+                }
+            }
+            // valids: outlook.com, yahoo.com, gmail.com (Outlook.com)
+            if (temp.ToLower() == "yahoo.com" ||
+                temp.ToLower() == "gmail.com" ||
+                temp.ToLower() == "outlook.com")
+            {
+                return true;
             }
 
-
+            return false;
         }
 
+        private bool validPassword(string password)
+        {
+            bool valid1 = false;
+            bool valid2 = false;
+            // first check that length >=8
+            int size = password.Length;
+            char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            char[] specialChars = { '!', '#', '$', '&', '_', '?' };
+            if (size >= 8)
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    foreach (char number in numbers)
+                    {
+                        if (password[i] == number)
+                        {
+                            valid1 = true;
+                            break;
+                        }
+                    }
+                    foreach (char special in specialChars)
+                    {
+                        if (password[i] == special)
+                        {
+                            valid2 = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (valid1 && valid2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
+        static void main(string[] args)
+        {
+            Application.Run(new Login());
+        }
 
     }
 }

@@ -97,7 +97,7 @@ namespace Projectt
             this.buttonSignUp.TabIndex = 10;
             this.buttonSignUp.Text = "Register";
             this.buttonSignUp.UseVisualStyleBackColor = false;
-            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click_1);
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
             // Pswrd_text
             // 
@@ -149,7 +149,6 @@ namespace Projectt
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Email);
             this.Name = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
