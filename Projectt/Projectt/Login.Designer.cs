@@ -37,8 +37,8 @@ namespace Projectt
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonSignUp = new System.Windows.Forms.Button();
             this.Pswrd_text = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,17 +110,6 @@ namespace Projectt
             this.Pswrd_text.PasswordChar = '*';
             this.Pswrd_text.Size = new System.Drawing.Size(245, 28);
             this.Pswrd_text.TabIndex = 11;
-            this.Pswrd_text.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Pswrd_text_MaskInputRejected);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(335, 55);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(146, 163);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -136,6 +125,16 @@ namespace Projectt
             this.label2.Click += new System.EventHandler(this.label2_Click);
             this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
             this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(335, 55);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(146, 163);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // Login
             // 

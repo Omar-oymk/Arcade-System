@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace Projectt
 {
     public partial class Register : Form
     {
+        SoundPlayer buttonEffect;
         public Register()
         {
             InitializeComponent();
@@ -61,7 +63,14 @@ namespace Projectt
 
                 if (rowsAffected > 0)
                 {
+                    // for the sound effect
+                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+                    buttonEffect.Play();
+
+                    // messagebox for login
                     MessageBox.Show("Registration successful!");
+
+                    // next page
                     Login login = new Login();
                     login.Show();
                     this.Hide();

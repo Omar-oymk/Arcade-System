@@ -8,18 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Media;
 
 namespace Projectt
 {
     public partial class Login: Form
     {
+        SoundPlayer songPlayer;
+        SoundPlayer buttonEffect;
         public Login()
         {
             InitializeComponent();
             this.BackColor = ColorTranslator.FromHtml("#6c329d");
             Pswrd_text.PasswordChar = '*';
             Pswrd_text.Font = new Font("ArcadeClassic", 14, FontStyle.Bold);
-
+            songPlayer = new SoundPlayer(@"C:\Users\user\Downloads\ArcadeLoginSong.wav");
+            songPlayer.Play();
         }
 
         private void Form1_Load(object sender, EventArgs e) { }
@@ -37,6 +41,8 @@ namespace Projectt
 
         private void buttonLogin_Click(object sender, EventArgs e) 
         {
+
+
             try
             {
                 string email = txt_Email.Text;
@@ -62,7 +68,14 @@ namespace Projectt
 
                 if (dtablem.Rows.Count > 0)
                 {
+                    // for the sound effect
+                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+                    buttonEffect.Play();
+
+                    // messagebox for login
                     MessageBox.Show("Login successful!");
+
+                    // next page
                     Ticket ticket1 = new Ticket();
                     ticket1.Show();
                     this.Hide();
@@ -117,9 +130,10 @@ namespace Projectt
             this.Hide();
         }
 
-        private void Pswrd_text_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void buttonLogin_MouseHover(object sender, EventArgs e)
         {
-
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+            buttonEffect.Play();
         }
     }
 }
