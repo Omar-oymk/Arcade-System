@@ -131,7 +131,7 @@ namespace Projectt
                 ImageStore.currentIndex--;
                 admin.RemoveGame(GamesStore.games[GamesStore.currentIndex - 1]);    // using remove game fn from admin
                 GamesStore.currentIndex--;
-                MessageBox.Show("Successfully removed last game");
+                MessageBox.Show(Convert.ToString(GamesStore.games[GamesStore.currentIndex].id)); // REMOVE THIS
             }
             else
             {
