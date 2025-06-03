@@ -38,3 +38,6 @@ C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\P
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.RealLife.resources
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.Profile.resources
 C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.AdminPage.resources
+C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.Online_Or_Real.resources
+C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.AddGame.resources
+C:\Users\user\source\repos\Omar-oymk\Arcade-System\Projectt\Projectt\obj\Debug\Projectt.ChangePoints.resources

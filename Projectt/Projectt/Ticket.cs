@@ -13,15 +13,17 @@ namespace Projectt
 {
     public partial class Ticket : Form
     {
+        string choice;
         private bool chosenATicket = false;
         SoundPlayer background;
         SoundPlayer buttonEffect;
-
-        public Ticket()
+        Player player;
+        public Ticket(Player player)
         {
             InitializeComponent();
             background = new SoundPlayer(@"C:\Users\user\Downloads\AdhesiveWombat - Night Shade (mp3cut.net) (1).wav");
             background.Play();
+            this.player = player;
         }
 
         private void Ticket_Load(object sender, EventArgs e)
@@ -32,17 +34,38 @@ namespace Projectt
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             chosenATicket = true;
+            choice = comboBox1.SelectedItem.ToString();
+        }
+
+        public void chooseCard(string choice)
+        {
+            //player.card = player.cardChoice(choice);        // assigns ticket
+            if (choice == "VIP Card")
+            {
+                player.Card = new VIPCard();
+            }
+            else if (choice == "Kids Card")
+            {
+                player.Card = new KidsCard();
+            }
+            else
+            {
+                player.Card = new AverageCard();
+            }
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
+            chooseCard(choice);
+
             if (chosenATicket)
             {
+                MessageBox.Show(player.Card.PrintMessage());
                 buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
                 buttonEffect.Play();
 
-                MainPage mainPage = new MainPage();
-                mainPage.Show();
+                Online_Or_Real Page = new Online_Or_Real(player);
+                Page.Show();
                 this.Close();
             }
             else

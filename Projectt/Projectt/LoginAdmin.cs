@@ -15,6 +15,7 @@ namespace Projectt
     public partial class LoginAdmin : Form
     {
         SoundPlayer buttonEffect;
+        Admin admin;
         public LoginAdmin()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace Projectt
                 string password = Pswrd_text.Text;
 
                 // create new admin object
-                Admin admin = new Admin(email, password);
+                admin = new Admin(email, password);
 
                 // Correct SQL query with parameterized values
                 string query = "SELECT * FROM dbo.Arcade WHERE Email = @Email AND Password = @Password AND IsAdmin = 1";
@@ -58,7 +59,7 @@ namespace Projectt
                     MessageBox.Show("Login successful!");
 
                     // next page
-                    AdminPage main = new AdminPage();
+                    AdminPage main = new AdminPage(admin);
                     main.Show();
                     this.Hide();
                 }

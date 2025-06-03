@@ -17,8 +17,8 @@ namespace Projectt
         SoundPlayer songPlayer;
         SoundPlayer buttonEffect;
         SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=SignInArcade;Integrated Security=True;");
-        
-        public Login()
+        Player player;
+        public Login()  // default constructor
         {
             InitializeComponent();
             this.BackColor = ColorTranslator.FromHtml("#6c329d");
@@ -37,7 +37,7 @@ namespace Projectt
                 string password = Pswrd_text.Text;
 
                 // create new player object
-                Player player = new Player(email, password);
+                player = new Player(email, password);
 
                 // Correct SQL query with parameterized values
                 string query = "SELECT * FROM dbo.Arcade WHERE Email = @Email AND Password = @Password";
@@ -59,8 +59,8 @@ namespace Projectt
                     // messagebox for login
                     MessageBox.Show("Login successful!");
 
-                    // next page
-                    Ticket ticket1 = new Ticket();
+                    // next page    (DEFAULT CONSTRUCTOR)
+                    Ticket ticket1 = new Ticket(player);
                     ticket1.Show();
                     this.Hide();
                 }
@@ -111,10 +111,9 @@ namespace Projectt
         }
         #endregion
 
-
         static void main(string[] args)
         {
-           Application.Run(new Login());
+            Application.Run(new Login());
         }
 
     }

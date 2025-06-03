@@ -12,9 +12,12 @@ namespace Projectt
 {
     public partial class Profile : Form
     {
-        public Profile()
+        public Profile(Player player)
         {
             InitializeComponent();
+            Username.Text = player.Username;
+            TicketType.Text = player.Card.name;
+            TicketBalance.Text = Convert.ToString(player.Card.Points);
         }
     }
 }

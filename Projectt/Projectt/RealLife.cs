@@ -15,6 +15,7 @@ namespace Projectt
         public RealLife()
         {
             InitializeComponent();
+            this.FormClosed += (s, args) => Application.Exit();     // add that if this form is closed then close the whole app
         }
     }
 }

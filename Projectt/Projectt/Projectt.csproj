@@ -48,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGame.Designer.cs">
+      <DependentUpon>AddGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePoints.Designer.cs">
+      <DependentUpon>ChangePoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassScript.cs" />
     <Compile Include="FlappyDemon.cs">
       <SubType>Form</SubType>
@@ -78,6 +90,12 @@
     </Compile>
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Online Or Real.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Online Or Real.Designer.cs">
+      <DependentUpon>Online Or Real.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -110,6 +128,12 @@
     <Compile Include="Ticket.Designer.cs">
       <DependentUpon>Ticket.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddGame.resx">
+      <DependentUpon>AddGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePoints.resx">
+      <DependentUpon>ChangePoints.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FlappyDemon.resx">
       <DependentUpon>FlappyDemon.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Online Or Real.resx">
+      <DependentUpon>Online Or Real.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
