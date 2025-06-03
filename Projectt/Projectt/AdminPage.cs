@@ -14,7 +14,6 @@ namespace Projectt
     public partial class AdminPage : Form
     {
         Admin admin;
-        Image image;
 
         public AdminPage(Admin admin)
         {
