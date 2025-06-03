@@ -53,7 +53,7 @@
             this.textBox2.Font = new System.Drawing.Font("ArcadeClassic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(235, 256);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 28);
+            this.textBox2.Size = new System.Drawing.Size(267, 28);
             this.textBox2.TabIndex = 24;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -83,10 +83,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("ArcadeClassic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 176);
+            this.label1.Font = new System.Drawing.Font("ArcadeClassic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 178);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 39);
+            this.label1.Size = new System.Drawing.Size(201, 37);
             this.label1.TabIndex = 35;
             this.label1.Text = "Game Name : ";
             // 
@@ -95,7 +95,7 @@
             this.textBox1.Font = new System.Drawing.Font("ArcadeClassic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(235, 187);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 28);
+            this.textBox1.Size = new System.Drawing.Size(267, 28);
             this.textBox1.TabIndex = 34;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -104,7 +104,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(80)))), ((int)(((byte)(87)))));
-            this.ClientSize = new System.Drawing.Size(795, 465);
+            this.ClientSize = new System.Drawing.Size(795, 443);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);

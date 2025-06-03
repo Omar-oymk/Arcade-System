@@ -28,8 +28,8 @@ namespace Projectt
     }
     public static class ImageStore
     {
-        public static Image[] images = new Image[4];
-        public static int currentIndex = 0;
+        public static Image[] images = new Image[4];   
+        public static int currentIndex = 0;     // LAST INDEX         
     }
     public static class GamesStore
     {
@@ -45,6 +45,6 @@ namespace Projectt
             new Game("Angry Birds", "Singleplayer"),
             null, null, null, null
         };
-        public static int currentIndex = 8;
+        public static int currentIndex = 8;     // LAST INDEX
     }
 }

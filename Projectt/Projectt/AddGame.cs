@@ -95,7 +95,7 @@ namespace Projectt
                 ImageStore.images[ImageStore.currentIndex] = selectedImage;
                 ImageStore.currentIndex++;
                 GamesStore.games[GamesStore.currentIndex] = game;
-                MessageBox.Show(Convert.ToString(GamesStore.games[GamesStore.currentIndex].id)); // REMOVE THIS
+                //MessageBox.Show(Convert.ToString(GamesStore.games[GamesStore.currentIndex].id)); // REMOVE THIS
                 GamesStore.currentIndex++;
                 this.Close();
             }

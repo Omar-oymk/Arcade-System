@@ -120,16 +120,16 @@ namespace Projectt
             return new Game(name, modeChoice);
         }
 
-        public void RemoveGame(Game game)
+        public void RemoveGame(ref Game game)
         {
-            game = null;
+            game = null;        // error this changes the (copy of the game passed to null and not the actual index)
         }
 
-        public void SetGamePrice(string name, int newPointCost)
+        public void SetGamePrice(string name, int newPointCost)     // gam
         {
             // search for the game in the global array of games
             // search with index 
-            for(int i = 8; i <= GamesStore.currentIndex + 1; i++)
+            for(int i = 8; i <= GamesStore.currentIndex; i++)
             {
                 if (GamesStore.games[i] != null && GamesStore.games[i].name == name)
                 {

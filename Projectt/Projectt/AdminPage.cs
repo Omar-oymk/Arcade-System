@@ -126,12 +126,12 @@ namespace Projectt
         {
             if (GamesStore.currentIndex > 0 && ImageStore.currentIndex > 0)
             {
-                
                 ImageStore.images[ImageStore.currentIndex - 1] = null;
                 ImageStore.currentIndex--;
-                admin.RemoveGame(GamesStore.games[GamesStore.currentIndex - 1]);    // using remove game fn from admin
+                admin.RemoveGame(ref GamesStore.games[GamesStore.currentIndex - 1]);    // using remove game fn from admin
                 GamesStore.currentIndex--;
-                MessageBox.Show(Convert.ToString(GamesStore.games[GamesStore.currentIndex].id)); // REMOVE THIS
+                MessageBox.Show("Removed Last Added Game Successfully");
+                //MessageBox.Show(Convert.ToString(GamesStore.games[GamesStore.currentIndex].id)); // REMOVE THIS
             }
             else
             {
