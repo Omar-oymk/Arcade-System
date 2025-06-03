@@ -21,7 +21,7 @@ namespace Projectt
         public Ticket(Player player)
         {
             InitializeComponent();
-            background = new SoundPlayer(@"C:\Users\user\Downloads\AdhesiveWombat - Night Shade (mp3cut.net) (1).wav");
+            background = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\TicketSong.wav");
             background.Play();
             this.player = player;
         }
@@ -60,9 +60,9 @@ namespace Projectt
 
             if (chosenATicket)
             {
-                MessageBox.Show(player.Card.PrintMessage());
-                buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+                buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
                 buttonEffect.Play();
+                MessageBox.Show(player.Card.PrintMessage());
 
                 Online_Or_Real Page = new Online_Or_Real(player);
                 Page.Show();

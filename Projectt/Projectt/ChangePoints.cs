@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace Projectt
         Admin admin;
         bool textbox1Changed = false;
         bool textbox2Changed = false;
+        SoundPlayer buttonEffect;
         public ChangePoints(Admin admin)
         {
             InitializeComponent();
@@ -24,7 +26,8 @@ namespace Projectt
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (textbox1Changed && textbox2Changed) // if the textbox was changed check if the input was a number
             {
                 int number;

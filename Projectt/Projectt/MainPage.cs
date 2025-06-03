@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace Projectt
     public partial class MainPage : Form
     {
         Player player;
+        SoundPlayer buttonEffect;
         public MainPage(Player player)
         {
             InitializeComponent();
@@ -110,6 +112,8 @@ namespace Projectt
 
         private void Profile_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             Profile profile = new Profile(player);
             profile.Show();
             this.Hide();
@@ -118,6 +122,8 @@ namespace Projectt
 
         private void Games_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             FlappyDemon game = new FlappyDemon();
             this.Hide();
             game.Show();
@@ -126,6 +132,8 @@ namespace Projectt
 
         private void Logout_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             Login login = new Login();
             login.Show();
             this.Hide();
@@ -135,6 +143,8 @@ namespace Projectt
         #region Play Buttons
         private void PlayGame_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -148,6 +158,8 @@ namespace Projectt
 
         private void button2_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -161,6 +173,8 @@ namespace Projectt
 
         private void button3_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -174,6 +188,8 @@ namespace Projectt
 
         private void button4_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -187,6 +203,8 @@ namespace Projectt
 
         private void button8_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -200,6 +218,8 @@ namespace Projectt
 
         private void button7_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -213,6 +233,8 @@ namespace Projectt
 
         private void button6_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -226,6 +248,8 @@ namespace Projectt
 
         private void button5_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= 30)
             {
                 player.Card.Points -= 30;
@@ -239,6 +263,8 @@ namespace Projectt
 
         private void button11_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= GamesStore.games[8].Points)
             {
                 player.Card.Points -= GamesStore.games[8].Points;
@@ -252,6 +278,8 @@ namespace Projectt
 
         private void button12_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= GamesStore.games[9].Points)
             {
                 player.Card.Points -= GamesStore.games[9].Points;
@@ -265,6 +293,8 @@ namespace Projectt
 
         private void button9_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= GamesStore.games[10].Points)
             {
                 player.Card.Points -= GamesStore.games[10].Points;
@@ -278,6 +308,8 @@ namespace Projectt
 
         private void button10_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (player.Card.Points >= GamesStore.games[11].Points)
             {
                 player.Card.Points -= GamesStore.games[11].Points;

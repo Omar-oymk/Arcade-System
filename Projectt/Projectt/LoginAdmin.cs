@@ -52,7 +52,7 @@ namespace Projectt
                 if (dtablem.Rows.Count > 0)
                 {
                     // for the sound effect
-                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
                     buttonEffect.Play();
 
                     // messagebox for login

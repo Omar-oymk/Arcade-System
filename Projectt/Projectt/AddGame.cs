@@ -15,11 +15,11 @@ namespace Projectt
     {
         public Image[] images = new Image[]
         {
-            Image.FromFile(@"C:\Users\user\Downloads\diamond (1).png"),
-            Image.FromFile(@"C:\Users\user\Downloads\space-invaders.png"),
-            Image.FromFile(@"C:\Users\user\Downloads\ghost (1).png"),
-            Image.FromFile(@"C:\Users\user\Downloads\block.png"),
-            Image.FromFile(@"C:\Users\user\Downloads\tetris.png"),
+            Image.FromFile(@"C:\Users\user\Downloads\Arcade Project\Assets\Images\diamond (1).png"),
+            Image.FromFile(@"C:\Users\user\Downloads\Arcade Project\Assets\Images\space-invaders.png"),
+            Image.FromFile(@"C:\Users\user\Downloads\Arcade Project\Assets\Images\ghost (1).png"),
+            Image.FromFile(@"C:\Users\user\Downloads\Arcade Project\Assets\Images\block.png"),
+            Image.FromFile(@"C:\Users\user\Downloads\Arcade Project\Assets\Images\tetris.png"),
         };
 
         Admin admin;
@@ -27,6 +27,7 @@ namespace Projectt
         string modeChoice;
         bool chosenAMode = false;
         Image selectedImage;
+        SoundPlayer buttonEffect;
         public AddGame(Admin admin)
         {
             InitializeComponent();
@@ -40,6 +41,8 @@ namespace Projectt
         
         private void button1_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             bool valid1 = false, valid2 = false, valid3 = false;
             // checks for index
             int index;

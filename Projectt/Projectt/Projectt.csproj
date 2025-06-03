@@ -210,5 +210,95 @@
   <ItemGroup>
     <None Include="Resources\worms.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world-of-warcraft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\token.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forbidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\character.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\space-invaders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghost %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\super-mario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pokeball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minecraft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angry-birds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mushroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arcade %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worms1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world-of-warcraft1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tetris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playing-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\virtual-reality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gamer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\videogame-console.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

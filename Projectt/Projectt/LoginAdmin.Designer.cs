@@ -31,7 +31,6 @@ namespace Projectt
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginAdmin));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Pswrd_text = new System.Windows.Forms.MaskedTextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
@@ -43,7 +42,7 @@ namespace Projectt
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::Projectt.Properties.Resources.admin;
             this.pictureBox2.Location = new System.Drawing.Point(333, 55);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(146, 163);

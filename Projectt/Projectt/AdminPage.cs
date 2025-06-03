@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Projectt
 {
     public partial class AdminPage : Form
     {
         Admin admin;
-
+        SoundPlayer buttonEffect;
         public AdminPage(Admin admin)
         {
             InitializeComponent();
@@ -90,6 +91,8 @@ namespace Projectt
         #region clicks
         private void Games_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             FlappyDemon game = new FlappyDemon();
             this.Hide();
             game.Show();
@@ -98,6 +101,8 @@ namespace Projectt
 
         private void Logout_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             Login login = new Login();
             login.Show();
             this.Hide();
@@ -106,6 +111,8 @@ namespace Projectt
 
         private void label1_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             AddGame addgame = new AddGame(admin);
             addgame.Show();
             this.Hide();
@@ -124,6 +131,8 @@ namespace Projectt
 
         private void label2_Click(object sender, EventArgs e)       // REMOVE GAMES
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             if (GamesStore.currentIndex > 0 && ImageStore.currentIndex > 0)
             {
                 ImageStore.images[ImageStore.currentIndex - 1] = null;
@@ -152,6 +161,8 @@ namespace Projectt
 
         private void label3_Click(object sender, EventArgs e)
         {
+            buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
+            buttonEffect.Play();
             ChangePoints changePoints = new ChangePoints(admin);
             changePoints.Show();
             this.Hide();

@@ -24,7 +24,7 @@ namespace Projectt
             this.BackColor = ColorTranslator.FromHtml("#6c329d");
             Pswrd_text.PasswordChar = '*';
             Pswrd_text.Font = new Font("ArcadeClassic", 14, FontStyle.Bold);
-            songPlayer = new SoundPlayer(@"C:\Users\user\Downloads\ArcadeLoginSong.wav");
+            songPlayer = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ArcadeLoginSong.wav");
             songPlayer.Play();
         }
 
@@ -53,7 +53,7 @@ namespace Projectt
                 if (dtablem.Rows.Count > 0)
                 {
                     // for the sound effect
-                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\game-start-6104.wav");
+                    buttonEffect = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\ButtonClick.wav");
                     buttonEffect.Play();
 
                     // messagebox for login

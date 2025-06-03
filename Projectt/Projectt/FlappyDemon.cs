@@ -3,11 +3,13 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Projectt
 {
     public partial class FlappyDemon : Form
     {
+        #region dll window embedding
         // DLL imports for window embedding
         [DllImport("user32.dll")]
         static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
@@ -26,10 +28,16 @@ namespace Projectt
 
         Process unityGameProcess;
         IntPtr unityWindowHandle;
+        #endregion
 
+        SoundPlayer drums;
         public FlappyDemon()
         {
             InitializeComponent();
+
+            drums = new SoundPlayer(@"C:\Users\user\Downloads\Arcade Project\Assets\Music\Drums.wav");
+            drums.Play();
+
             var handle = panel3.Handle; // force handle creation
 
             // open this window in full screen

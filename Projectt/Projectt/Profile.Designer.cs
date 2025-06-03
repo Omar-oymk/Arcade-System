@@ -30,7 +30,6 @@ namespace Projectt
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             this.UsernameText = new System.Windows.Forms.Label();
             this.Username = new System.Windows.Forms.Label();
             this.TicketType = new System.Windows.Forms.Label();
@@ -106,7 +105,7 @@ namespace Projectt
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Projectt.Properties.Resources.character;
             this.pictureBox1.Location = new System.Drawing.Point(272, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 256);
