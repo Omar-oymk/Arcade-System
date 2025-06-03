@@ -44,16 +44,16 @@ namespace Projectt
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 693);
+            this.panel1.Size = new System.Drawing.Size(600, 693);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1153, 0);
+            this.panel2.Location = new System.Drawing.Point(553, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(0, 693);
+            this.panel2.Size = new System.Drawing.Size(600, 693);
             this.panel2.TabIndex = 1;
             // 
             // timer1

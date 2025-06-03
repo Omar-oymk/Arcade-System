@@ -73,7 +73,7 @@ namespace Projectt
             this.SideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideBar.Location = new System.Drawing.Point(0, 0);
             this.SideBar.Name = "SideBar";
-            this.SideBar.Size = new System.Drawing.Size(300, 638);
+            this.SideBar.Size = new System.Drawing.Size(0, 638);
             this.SideBar.TabIndex = 0;
             // 
             // label3
